@@ -1,22 +1,6 @@
 const lessons = require("./lessons.json")
 
-// const { NlpManager } = require("node-nlp")
-
-// const manager = new NlpManager({ languages: ["en"] })
-// //
-// lessons.forEach(lesson => {
-//   try {
-//     manager.addDocument("en", lesson.title, "greetings.hello")
-//   } catch (error) {
-//     console.log({ error: lesson.title })
-//   }
-// })
-// ;(async () => {
-//   await manager.train()
-//   manager.save()
-//   const response = await manager.process("en", "Should I Learn Angular")
-//   console.log(response)
-// })()
+const _ = require("lodash")
 
 const natural = require("natural")
 
@@ -38,17 +22,25 @@ const sentences = lessons
     })
   })
 
-const titlesObject = sentences
-  // .slice(0, 10)
+const titleCandidates = sentences
+  .filter(sentence => sentence[0].tag.startsWith("V") && sentence.length > 3)
   .map(sentence => sentence.map(word => `#${word.tag}#`).join(" "))
-  .reduce((acc, sentence, i) => {
-    acc["title" + i] = sentence
-    return acc
-  }, {})
 
-console.log(Object.keys(titlesObject))
+const titleCounts = _.countBy(titleCandidates)
 
-const _ = require("lodash")
+const acceptedTitles = Object.keys(titleCounts).reduce((acc, sentence) => {
+  const count = titleCounts[sentence]
+  console.log({ count })
+  return [...acc, ...(count > 1 ? [sentence] : [])]
+}, [])
+
+const titlesObject = acceptedTitles.reduce((acc, sentence, i) => {
+  acc["title" + i] = sentence
+  return acc
+}, {})
+
+// console.log(Object.keys(titlesObject))
+
 const words = _.flatten(sentences)
 
 const tagsObject = words.reduce((acc, word) => {
@@ -58,11 +50,19 @@ const tagsObject = words.reduce((acc, word) => {
   return acc
 }, {})
 
-console.log(tagsObject)
+const uniqTagsObject = Object.keys(tagsObject).reduce((acc, key) => {
+  acc[key] = _.uniq(tagsObject[key]).filter(token =>
+    token.match(/^[A-Za-z_][A-Za-z0-9_]*$/)
+  )
+
+  return acc
+}, {})
+
+console.log(uniqTagsObject)
 
 const bracery = require("bracery")
 const b = new bracery.Bracery({
-  ...tagsObject,
+  ...uniqTagsObject,
   ...titlesObject
 })
 
