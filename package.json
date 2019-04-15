@@ -1,0 +1,24 @@
+{
+  "engines": {
+    "node": "10.x.x"
+  },
+  "name": "lesson-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "micro index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bracery": "^1.1.0",
+    "lodash": "^4.17.11",
+    "micro": "^9.3.3",
+    "natural": "^0.6.3",
+    "node-nlp": "^3.0.0",
+    "title": "^3.4.1"
+  }
+}
