@@ -35,7 +35,7 @@ const acceptedTitles = Object.keys(titleCounts).reduce((acc, sentence) => {
   return [...acc, ...(count > 1 ? [sentence] : [])]
 }, [])
 
-const titlesObject = acceptedTitles.reduce((acc, sentence, i) => {
+const titles = acceptedTitles.reduce((acc, sentence, i) => {
   acc["title" + i] = sentence
   return acc
 }, {})
@@ -50,7 +50,7 @@ const tagsObject = words.reduce((acc, { tag, token }) => {
   return acc
 }, {})
 
-const uniqTagsObject = Object.keys(tagsObject).reduce((acc, key) => {
+const tags = Object.keys(tagsObject).reduce((acc, key) => {
   acc[key] = _.uniq(tagsObject[key])
     .filter(token => token.match(/^[A-Za-z_][A-Za-z0-9_]*$/))
     .sort()
@@ -60,7 +60,7 @@ const uniqTagsObject = Object.keys(tagsObject).reduce((acc, key) => {
 
 ;(async () => {
   await fs.writeJSON("./data.json", {
-    ...uniqTagsObject,
-    ...titlesObject
+    tags,
+    titles
   })
 })()
