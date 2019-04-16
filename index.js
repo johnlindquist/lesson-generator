@@ -1,8 +1,5 @@
 const bracery = require("bracery")
-const b = new bracery.Bracery({
-  ...uniqTagsObject,
-  ...titlesObject
-})
+const b = new bracery.Bracery(require("./data.json"))
 
 const title = require("title")
 
