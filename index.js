@@ -12,8 +12,6 @@ const braceryData = {
   ...structures
 }
 
-console.log(braceryData)
-
 const b = new bracery.Bracery(braceryData)
 
 const title = require("title")
@@ -28,14 +26,14 @@ module.exports = (req, res) => {
   const t = b.expand(`${randomTitle}`)
 
   const text = title(t.text)
-  console.log(`
-    ###
-    ${randomTitle}
-    ---
-    ${titles.find(title => title.structure == randomTitle).originals}
-    ${t.text}
-    ---
-  `)
+  // console.log(`
+  //   ###
+  //   ${randomTitle}
+  //   ---
+  //   ${titles.find(title => title.structure == randomTitle).originals}
+  //   ${t.text}
+  //   ---
+  // `)
 
   res.end(text)
 }
