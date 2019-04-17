@@ -101,7 +101,7 @@
       "validating",
       "writing"
     ],
-    "DT": ["a", "all", "another", "any", "each", "no", "some", "the"],
+    "DT": ["a", "all", "another", "any", "each", "some", "the"],
     "ZZZ": [
       "abortcontroller",
       "accessing",
