@@ -7,8 +7,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "micro index.js"
+    "dev": "parcel index.html",
+    "now-build": "parcel build index.html"
   },
   "keywords": [],
   "author": "",
@@ -17,9 +17,12 @@
     "bracery": "^1.1.0",
     "fs-extra": "^7.0.1",
     "lodash": "^4.17.11",
-    "micro": "^9.3.3",
     "natural": "^0.6.3",
     "node-nlp": "^3.0.0",
     "title": "^3.4.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.18.0"
   }
 }
