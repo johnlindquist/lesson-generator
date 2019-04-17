@@ -475,9 +475,6 @@
       "toggle",
       "toggled",
       "tooltips",
-      "touchable",
-      "touchablehighlight",
-      "touchables",
       "traceur",
       "transcluded",
       "transclusion",
@@ -1613,8 +1610,7 @@
       "programmatically",
       "properly",
       "quickly",
-      "safely",
-      "twice"
+      "safely"
     ],
     "VBN": [
       "associated",
