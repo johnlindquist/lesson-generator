@@ -1,0 +1,36 @@
+[
+  {
+    "count": 2,
+    "structure": "#VB# #N# #IN# #N#",
+    "originals": ["await keyword in es2016", "Deploy Node.js on Docker"]
+  },
+  {
+    "count": 2,
+    "structure": "#VB# #JJ# #NNS# #IN# #NNP#",
+    "originals": [
+      "Understand Built-in types in Dart",
+      "Serve Static Files with Express"
+    ]
+  },
+  {
+    "count": 2,
+    "structure": "#VB# #NN# #NNS# #IN# #N#",
+    "originals": [
+      "Identify memory leaks with nodejs-dashboard",
+      "Install TypeScript declarations from npm"
+    ]
+  },
+  {
+    "count": 2,
+    "structure": "#VBG# #NN# #N# #IN# #N#",
+    "originals": [
+      "Understanding function bind() in JavaScript",
+      "Creating Demo APIs with json-server"
+    ]
+  },
+  {
+    "count": 2,
+    "structure": "#VBG# #IN# #N#",
+    "originals": ["Hoisting in JavaScript", "Logging with PM2"]
+  }
+]
