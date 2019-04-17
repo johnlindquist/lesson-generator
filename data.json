@@ -372,9 +372,7 @@
       "polymorphic",
       "postcss",
       "powerplug",
-      "pre",
-      "precompile",
-      "precompiling",
+
       "predicate",
       "preload",
       "prepack",
@@ -488,7 +486,7 @@
       "transformresponse",
       "transitionspring",
       "tslint",
-      "ttab",
+
       "tweenlite",
       "tweenmax",
       "tweet",
@@ -538,9 +536,7 @@
       "writequery",
       "xstate",
       "yargs",
-      "zeit",
-      "zero",
-      "zippy"
+      "zeit"
     ],
     "NNP": [
       "abstract",
